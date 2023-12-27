@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Arrays</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="section">
+            <h1>Merge Arrays and Remove Duplicates</h1>
+            <label for="array">Array 1:</label><br>
+            <input type="text" id="array1"><br>
+            <label for="array">Array 2:</label><br>
+            <input type="text" id="array2"><br>
+            <button type="button" onclick="mergeArrays()">Merge and Remove Duplicates</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+      function mergeArrays(){
+        var inputArray1 = document.getElementById("array1").value.split(',');
+        var inputArray2 = document.getElementById("array2").value.split(',');
+
+        var mergedArray = Array.from(new Set(inputArray1.concat(inputArray2)));
+
+        document.getElementById("result").innerHTML = `<span style="font-weight:600; font-size:20px">Merged Array without Duplicates:</span> ` + mergedArray.join(',');
+      }
+    </script>
+</body>
+</html>
